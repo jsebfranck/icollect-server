@@ -11,9 +11,10 @@ describe('icollect', function() {
       .send({})
       .end(function(err, res) {
         expect(res.status).to.equal(200);
-        if (err) {
-          console.log('ERROR', err);
-        }
+        expect(res.body.id).to.equal('JKLMQSDFJMLKEZMKL');
+        expect(res.body.lastname).to.equal('Collex');
+        expect(res.body.firstname).to.equal('Tatiana');
+        expect(res.body.role).to.equal('IN_CHARGE');
         done();
        });
   });

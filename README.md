@@ -12,6 +12,19 @@ cd icollect-server
 npm install
 node bin/www
 
+
+# Install HBASE
+
+http://hbase.apache.org/book/quickstart.html
+
+# Create table
+
+hbase(main):010:0> create 'collect', 'facts'
+
+# Launch HBASE rest server
+
+./bin/hbase rest start -p 8080
+
 # Access to server
 
 Collect service :

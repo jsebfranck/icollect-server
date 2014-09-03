@@ -17,6 +17,19 @@ npm start
 
 http://hbase.apache.org/book/quickstart.html
 
+# Use the following hbase documentation
+
+<configuration>
+  <property>
+    <name>hbase.rootdir</name>
+    <value>file:///var/tmp/hbase/hbase</value>
+  </property>
+  <property>
+    <name>hbase.zookeeper.property.dataDir</name>
+    <value>/var/tmp/hbase/zookeeper</value>
+  </property>
+</configuration>
+
 # Create table
 
 hbase(main):010:0> create 'collect', 'facts'

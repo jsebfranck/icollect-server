@@ -1,6 +1,5 @@
 icollect-server
 ===============
-
 # Prerequisites
 
 Installer nvm
@@ -25,4 +24,4 @@ Login service :
 
 ```
 curl -H "Content-Type: application/json" -d '{"login":"xyz","password":"xyz"}' http://localhost:3000/login
-```
+

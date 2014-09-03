@@ -11,6 +11,9 @@ describe('icollect', function() {
       .send({})
       .end(function(err, res) {
         expect(res.status).to.equal(200);
+        if (err) {
+          console.log('ERROR', err);
+        }
         done();
        });
   });
@@ -21,6 +24,9 @@ describe('icollect', function() {
       .send({})
       .end(function(err, res) {
         expect(res.status).to.equal(200);
+        if (err) {
+          console.log('ERROR', err);
+        }
         done();
        });
   });

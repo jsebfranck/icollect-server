@@ -13,7 +13,7 @@ npm install
 npm start
 
 
-# Install HBASE
+### Install HBASE
 
 http://hbase.apache.org/book/quickstart.html
 
@@ -34,11 +34,15 @@ http://hbase.apache.org/book/quickstart.html
 
 hbase(main):010:0> create 'collect', 'facts'
 
+# List table entries
+
+hbase(main):003:0> scan 'collect'
+
 # Launch HBASE rest server
 
 ./bin/hbase rest start -p 8080
 
-# Access to server
+### Access to server
 
 Collect service :
 
@@ -50,4 +54,3 @@ Login service :
 
 ```
 curl -H "Content-Type: application/json" -d '{"login":"xyz","password":"xyz"}' http://localhost:3000/login
-

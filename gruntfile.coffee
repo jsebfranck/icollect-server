@@ -25,7 +25,6 @@ module.exports = (grunt) ->
       src: watchFiles.mochaTests
       options:
         reporter: "spec"
-        require: "app.js"
 
     nodemon:
       dev:

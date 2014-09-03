@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.json({ 'welcome': true });
+router.post('/collect', function(req, res) {
+  res.json({
+    'collectId': '1234IJEIOJHFEL'
+  });
 });
 
 module.exports = router;

@@ -10,6 +10,7 @@
     "debug": "~1.0.4",
     "express": "~4.8.6",
     "hbase-client": "^1.0.0",
+    "helmet": "^0.4.1",
     "jade": "~1.5.0",
     "morgan": "~1.2.3",
     "node-uuid": "^1.4.1",

@@ -21,4 +21,10 @@ router.post('/collect-backend', function(req, res) {
   });
 });
 
+router.get('/collect', function(req, res) {
+  collectService.listCollects().then(function(result) {
+    res.json(result);
+  });
+});
+
 module.exports = router;

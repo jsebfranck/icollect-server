@@ -19,6 +19,7 @@ http://hbase.apache.org/book/quickstart.html
 
 # Use the following hbase documentation
 
+```
 <configuration>
   <property>
     <name>hbase.rootdir</name>
@@ -29,6 +30,7 @@ http://hbase.apache.org/book/quickstart.html
     <value>/var/tmp/hbase/zookeeper</value>
   </property>
 </configuration>
+```
 
 # Create table
 

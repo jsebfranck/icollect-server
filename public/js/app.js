@@ -190,7 +190,7 @@ app.controller("GeolocController", function($scope, $http) {
     $scope.loadDonations = function() {
         $scope.map.markers = [];
         // lecture des points sur la carte
-        $http.get('js/data.json').success(function(data) {
+        $http.get('/collect').success(function(data) {
             $scope.donations = data;
         });
 

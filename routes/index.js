@@ -15,13 +15,18 @@ router.post('/collect', function(req, res) {
   });
 });
 
+router.get('/collect', function(req, res) {
+  var data = require('./collect.data').getCollectData();
+  res.json(data);
+});
+
 router.post('/collect-backend', function(req, res) {
   collectService.createCollect(req.body).then(function(result) {
     res.json(result);
   });
 });
 
-router.get('/collect', function(req, res) {
+router.get('/collect-backend', function(req, res) {
   collectService.listCollects().then(function(result) {
     res.json(result);
   });

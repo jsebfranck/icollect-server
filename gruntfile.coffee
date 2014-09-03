@@ -7,6 +7,9 @@ module.exports = (grunt) ->
       "app.js"
       "routes/**/*.js"
       "services/**/*.js"
+    ],
+    mochaTests: [
+      "tests/**/*.js"
     ]
 
   # Project Configuration
@@ -17,6 +20,12 @@ module.exports = (grunt) ->
         files: watchFiles.serverJS
         options:
           livereload: true
+
+    mochaTest:
+      src: watchFiles.mochaTests
+      options:
+        reporter: "spec"
+        require: "app.js"
 
     nodemon:
       dev:
@@ -34,13 +43,16 @@ module.exports = (grunt) ->
       options:
         logConcurrentOutput: true
 
-
   # Load NPM tasks
   require("load-grunt-tasks") grunt
 
   # Default task(s).
   grunt.registerTask "default", [
     "concurrent"
+  ]
+
+  grunt.registerTask "test", [
+    "mochaTest"
   ]
 
   return

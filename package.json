@@ -17,11 +17,13 @@
     "serve-favicon": "~2.0.1"
   },
   "devDependencies": {
+    "chai": "^1.9.1",
     "coffee-script": "^1.8.0",
     "grunt": "^0.4.5",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-nodemon": "^0.3.0",
-    "load-grunt-tasks": "^0.6.0"
+    "load-grunt-tasks": "^0.6.0",
+    "supertest": "^0.13.0"
   }
 }

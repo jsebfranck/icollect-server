@@ -10,7 +10,7 @@ nvm use v0.10.28
 
 cd icollect-server
 npm install
-node bin/www
+npm start
 
 
 # Install HBASE

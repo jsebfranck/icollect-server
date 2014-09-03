@@ -1,0 +1,9 @@
+[
+    { "latitude": 48.8600, "longitude": 2.3456, "color": "#0AA21F" },
+    { "latitude": 48.860,  "longitude": 2.3930, "color": "#0BB21A" },
+    { "latitude": 48.8871, "longitude": 2.3691, "color": "#0CC21F" },
+    { "latitude": 48.8866, "longitude": 2.3217, "color": "#0DD21C" },
+    { "latitude": 48.8599, "longitude": 2.2979, "color": "#0EE21F" },
+    { "latitude": 48.8333, "longitude": 2.3221, "color": "#08BCCF" },
+    { "latitude": 48.8336, "longitude": 2.3700, "color": "#08BDDA" }
+]

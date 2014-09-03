@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="icollect">
+
+<head>
+    <meta charset="UTF-8">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization&sensor=false&language=en&v=3.16"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" type="text/javascript"></script>
+    <script src="js/angular-google-maps.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"
+          type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,600,300,700'
+          rel='stylesheet' type='text/css'>
+    <link href="js/example.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-controller="GeolocController">
+
+<div class="container">
+
+    <div class="row">
+        <div class="page-title">
+            <h2>iCollect</h2>
+        </div>
+
+        <div class="well">
+            <div class="btn-group">
+                <button type="button" class="btn btn-info" ng-class="{active: seletedGender == 'F'}" ng-click="filterGender('F')">F</button>
+                <button type="button" class="btn btn-info" ng-class="{active: seletedGender == 'M'}" ng-click="filterGender('M')">H</button>
+                <button type="button" class="btn btn-info" ng-class="{active: seletedGender == ''}" ng-click="filterGender('')">Tous</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <google-map center="map.center"
+                    zoom="map.zoom"
+                    options="map.options"
+                    dragging="map.dragging"
+                    draggable="true"
+                    bounds="map.bounds"
+                    events="map.events"
+                    control="map.control">
+
+            <marker ng-repeat="m in map.markers" coords="m.coords" click="map.onMarkerClick(m)" idkey="m.id">
+                <window show="m.show" ng-cloak>
+                    <div>
+                        <div ng-show="!isDonation(m)">Nombre de don: {{m.count}}</div>
+                        <div ng-show="!isNotDonation(m)">
+                            <p>({{m.gender}}) {{m.firstname}} {{m.lastname}}</p>
+                        </div>
+                    </div>
+                </window>
+            </marker>
+
+
+            <circle ng-repeat="c in map.circles track by c.id" center="c.center" stroke="c.stroke" fill="c.fill" radius="c.radius"
+                    visible="c.visible" geodesic="c.geodesic" editable="c.editable" draggable="c.draggable" clickable="c.clickable">
+
+            </circle>
+
+        </google-map>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

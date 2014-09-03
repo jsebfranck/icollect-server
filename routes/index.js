@@ -14,7 +14,7 @@ router.post('/login', function(req, res) {
 
 router.post('/collect', function(req, res) {
   res.json({
-    status: 'ok';
+    status: 'ok'
   });
 });
 

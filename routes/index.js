@@ -1,9 +1,10 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express'),
+  router = express.Router(),
+  service = require('../services/collect.service');
 
 router.post('/collect', function(req, res) {
-  res.json({
-    'collectId': '1234IJEIOJHFEL'
+  service.createCollect(req.body).then(function(result) {
+    res.json(result);
   });
 });
 
